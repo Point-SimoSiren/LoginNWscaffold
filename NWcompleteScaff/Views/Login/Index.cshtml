@@ -24,12 +24,17 @@
             top: 30%;
             border: 1px solid #ccc;
             padding: 10px 10px;
-            background-color: orange;
+            background-color: mistyrose;
+        }
+        .field-validation-error {
+            color:red;
+            
+        }
     </style>
     
 </head>
 
-<body style="background-color:whitesmoke;">
+<body style="background-color:greenyellow;">
 
 
     <div id="login-div">
@@ -69,6 +74,13 @@
                         @Html.ValidationMessageFor(model => model.Password)
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">
+                        @Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                    </td>
+                </tr>
+
                 <tr>
                     <td></td>
                     <td>

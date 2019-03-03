@@ -11,11 +11,22 @@ namespace NWcompleteScaff.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
+
     public partial class User
     {
         public int UserID { get; set; }
+        
+        [DisplayName("User Name")]
+        [Required(ErrorMessage = "User Name is required.")]
         public string UserName { get; set; }
+
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Password is required.")]
         public string Password { get; set; }
+
+        public string LoginErrorMessage { get; set; }
     }
 }
