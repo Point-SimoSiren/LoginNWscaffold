@@ -23,7 +23,7 @@ namespace NWcompleteScaff.Controllers
         {
             using (LoginEntities db = new LoginEntities())
             {
-                Console.WriteLine("autherize sent to controller");
+                
                 var userDetails = db.Users.Where
                (x => x.UserName == userModel.UserName && x.Password == userModel.Password)
                .FirstOrDefault();
@@ -46,8 +46,22 @@ namespace NWcompleteScaff.Controllers
         public ActionResult LogOut()
         {
             Session.Abandon();
-            return RedirectToAction("index", "login");
+
+
+
+            return RedirectToAction("index2", "login");
+
+            
+
+        }
+
+            public ActionResult LoggedOut()
+            {
+            ViewBag.LoggedOut = "You have logged out succesfully.";
+            return View(); //We have a special wiev LoggedOut which is a copy of Index, but has additional viewbag message of succesfull logout.
+            }
+
+
 
         }
     }
-}

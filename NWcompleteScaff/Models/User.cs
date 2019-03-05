@@ -28,5 +28,7 @@ namespace NWcompleteScaff.Models
         public string Password { get; set; }
 
         public string LoginErrorMessage { get; set; }
+
+        
     }
 }
