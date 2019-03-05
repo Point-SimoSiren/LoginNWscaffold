@@ -29,6 +29,9 @@ namespace NWcompleteScaff.Models
 
         public string LoginErrorMessage { get; set; }
 
-        
+        /* Hello :) Above are some additions in the model class made with entity framework
+        for showing User Name nicely, not like in the database, and password shown in the input field with dots,
+        not the actual text written by
+        the login candidate. */
     }
 }
