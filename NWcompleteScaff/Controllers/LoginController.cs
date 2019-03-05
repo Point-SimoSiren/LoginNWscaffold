@@ -49,7 +49,7 @@ namespace NWcompleteScaff.Controllers
 
 
 
-            return RedirectToAction("index2", "login");
+            return RedirectToAction("LoggedOut", "login");
 
             
 

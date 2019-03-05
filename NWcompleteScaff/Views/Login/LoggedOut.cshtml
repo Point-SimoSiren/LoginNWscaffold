@@ -36,13 +36,10 @@
 
 <body style="background-color:greenyellow;">
 
-    <p>@ViewBag.LoggedOut</p>
+   
 
     <div id="login-div">
-        <h5>
-            Welcome to Northwind, please L <div class="spinner-border text-primary">
-            </div> gin to start.
-        </h5>
+        <h2 style="color: green">@ViewBag.LoggedOut</h2>
         <br>
         @using (Html.BeginForm("Autherize", "Login", FormMethod.Post))
         {
@@ -78,7 +75,8 @@
                 <tr>
                     <td colspan="2">
                         <label class="field-validation-error">
-                        @Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                            @Html.DisplayFor(model => model.LoginErrorMessage)
+                        </label>
                     </td>
                 </tr>
 
