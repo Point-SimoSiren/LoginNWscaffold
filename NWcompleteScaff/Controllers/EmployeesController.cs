@@ -17,6 +17,14 @@ namespace NWcompleteScaff.Controllers
         // GET: Employees
         public ActionResult Index()
         {
+            if (Session["userID"] != null)
+            {
+                ViewBag.LoginStatus = "You are logged in";
+            }
+            else
+            {
+                ViewBag.LoginStatus = null;
+            }
             var employees = db.Employees.Include(e => e.Employees2);
             return View(employees.ToList());
         }
@@ -119,6 +127,7 @@ namespace NWcompleteScaff.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

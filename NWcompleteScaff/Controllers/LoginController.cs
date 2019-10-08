@@ -46,22 +46,9 @@ namespace NWcompleteScaff.Controllers
         public ActionResult LogOut()
         {
             Session.Abandon();
-
-
-
-            return RedirectToAction("LoggedOut", "login");
-
-            
-
+            return RedirectToAction("Index", "Login");
         }
 
-            public ActionResult LoggedOut()
-            {
-            ViewBag.LoggedOut = "You have logged out succesfully.";
-            return View(); //We have a special wiev LoggedOut which is a copy of Index, but has additional viewbag message of succesfull logout.
-            }
 
-
-
-        }
+    }
     }
